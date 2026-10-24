@@ -4,15 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENG0018 Conference Paper</title>
 
+    <title>ENG0018 Conference Paper - Bridge Deck Repairs</title>
+
+    <!-- W3.CSS stylesheet -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Google Charts library -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
     <style>
         body {
             background-color: white;
             margin-left: 50px;
+            margin-right: 50px;
             font-family: Arial, sans-serif;
+            color: black;
         }
 
         h1 {
@@ -40,6 +47,7 @@
         table {
             border-collapse: collapse;
             width: 100%;
+            margin-bottom: 20px;
         }
 
         th, td {
@@ -55,11 +63,40 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        .chart {
+            width: 100%;
+            min-height: 400px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        #last-updated, #totalWordCount {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            font-family: Arial, sans-serif;
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Conference paper banner -->
     <img src="WebBanner2026.png" alt="University of Surrey banner">
 
     <hr>
@@ -69,15 +106,16 @@
 
     <hr>
 
-    <h2>Conference paper: Bridge Deck Repairs</h2>
+    <h2>Conference Paper: Bridge Deck Repairs</h2>
 
     <hr>
 
+    <!-- Table of contents -->
     <h2>Table of Contents</h2>
 
     <table>
         <tr>
-            <th><h3>Table of contents</h3></th>
+            <th>Table of contents</th>
         </tr>
         <tr>
             <td><a href="#Abstract">Abstract</a></td>
@@ -95,6 +133,7 @@
 
     <hr>
 
+    <!-- Abstract -->
     <h2 id="Abstract">Abstract</h2>
 
     <pre>
@@ -105,21 +144,21 @@ expected lifespans.
 
     <hr>
 
+    <!-- Introduction: this section is included in the word count -->
     <h2 id="Introduction">Introduction</h2>
 
-    <pre>
-Bridge deck repairs are important for maintaining the safety and durability
-of bridges. Selecting a repair method requires consideration of its cost
-and expected lifespan.
-    </pre>
+    <pre id="Introduction_InText">Bridge deck repairs are important for maintaining the safety and durability of bridges. Selecting a repair method requires consideration of its cost and expected lifespan. Engineers must compare the financial cost of a repair with how long the repair is expected to last. This helps inform decisions about the maintenance and long-term performance of bridge infrastructure.</pre>
 
     <hr>
 
+    <!-- Analysis and discussion: this section is included in the word count -->
     <h2 id="Analysis-and-discussion">Analysis and discussion</h2>
 
-    <p>
-        The table below compares the cost of repairs with the lifespan
-        of each repair option.
+    <p id="Analysis_InText">
+        The table below compares the cost of repairs with the lifespan of each
+        repair option. The figures illustrate that repair options can differ
+        considerably in both cost and expected lifespan. These values should
+        be considered when assessing the long-term value of different repairs.
     </p>
 
     <table>
@@ -151,10 +190,48 @@ and expected lifespan.
 
     <hr>
 
+    <!-- H3: JavaScript demonstration -->
+    <h2>JavaScript Demonstration</h2>
+
+    <h3>Change Button Colour</h3>
+    <button id="colourButton">Click me to change colour</button>
+
+    <h3>Consolidation Task 1: Text Input and Alert</h3>
+    <label for="userInput">Enter some text:</label>
+    <input type="text" id="userInput" placeholder="Type your message">
+    <button id="alertButton">Display Alert</button>
+
+    <h3>Consolidation Task 2: Random Number</h3>
+    <p id="randomNumberText">Click the button to generate a random number.</p>
+    <button id="randomNumberButton">Generate Random Number</button>
+
+    <hr>
+
+    <!-- H3: Consolidation Task 1 - city population bar chart -->
+    <h2>City Population in 2023</h2>
+    <p>Population of London, Birmingham and Edinburgh in 2023.</p>
+    <div id="population_chart" class="chart"></div>
+
+    <hr>
+
+    <!-- H3: Consolidation Task 2 - population trend line chart -->
+    <h2>Population Trends Over Time</h2>
+    <p>Population figures for London, Birmingham and Edinburgh from 2013 to 2023.</p>
+    <div id="population_trend_chart" class="chart"></div>
+
+    <hr>
+
+    <!-- H3: Consolidation Task 3 - monthly sales column chart -->
+    <h2>Monthly Sales in 2023</h2>
+    <p>Illustrative monthly sales data for a fictional online store.</p>
+    <div id="sales_chart" class="chart"></div>
+
+    <hr>
+
+    <!-- References -->
     <h2 id="References">References</h2>
 
     <h3>Reference 1</h3>
-
     <p>
         <a href="https://www.icevirtuallibrary.com/doi/full/10.1680/jbren.21.00034">
             Toshihiko et al (2023)
@@ -162,6 +239,284 @@ and expected lifespan.
     </p>
 
     <hr>
+
+    <!-- H3: GitHub last modified timestamp -->
+    <h2>Submission Validation</h2>
+
+    <p id="last-updated">Loading last update time...</p>
+
+    <button onclick="verifyLastUpdatedTime()">
+        Verify Last Modified Time
+    </button>
+
+    <hr>
+
+    <!-- H3: word count -->
+    <p id="totalWordCount">Total word count: calculating...</p>
+
+    <script>
+        // Change the button to a random colour when clicked
+        var button = document.getElementById("colourButton");
+
+        function changeColour() {
+            var randomColour = "#" +
+                Math.floor(Math.random() * 16777215)
+                    .toString(16)
+                    .padStart(6, "0");
+
+            button.style.backgroundColor = randomColour;
+        }
+
+        button.addEventListener("click", changeColour);
+
+
+        // Consolidation Task 1: display entered text in an alert
+        document.getElementById("alertButton").addEventListener("click", function () {
+            var enteredText = document.getElementById("userInput").value;
+            alert(enteredText);
+        });
+
+
+        // Consolidation Task 2: display a random number between 1 and 10
+        document.getElementById("randomNumberButton").addEventListener("click", function () {
+            var randomNumber = Math.floor(Math.random() * 10) + 1;
+
+            document.getElementById("randomNumberText").textContent =
+                "Random number: " + randomNumber;
+        });
+
+
+        // Load Google Charts
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+
+        google.charts.setOnLoadCallback(drawCharts);
+
+
+        // Draw all three charts
+        function drawCharts() {
+
+            // Consolidation Task 1: city population bar chart
+            var populationData = google.visualization.arrayToDataTable([
+                ["City", "Population"],
+                ["London", 9648000],
+                ["Birmingham", 1153900],
+                ["Edinburgh", 554000]
+            ]);
+
+            var populationOptions = {
+                title: "City Population in 2023",
+                hAxis: {
+                    title: "Population",
+                    minValue: 0
+                },
+                vAxis: {
+                    title: "City"
+                },
+                legend: {
+                    position: "none"
+                },
+                colors: ["#3366cc"],
+                chartArea: {
+                    width: "75%",
+                    height: "70%"
+                }
+            };
+
+            var populationChart = new google.visualization.BarChart(
+                document.getElementById("population_chart")
+            );
+
+            populationChart.draw(populationData, populationOptions);
+
+
+            // Consolidation Task 2: population trend line chart
+            var trendData = google.visualization.arrayToDataTable([
+                ["Year", "London", "Birmingham", "Edinburgh"],
+                [2013, 8414000, 1092200, 495000],
+                [2015, 8661000, 1113000, 507000],
+                [2017, 8916000, 1137100, 519000],
+                [2019, 9177000, 1141800, 531000],
+                [2021, 9426000, 1142500, 543000],
+                [2023, 9648000, 1153900, 554000]
+            ]);
+
+            var trendOptions = {
+                title: "City Population Trends (2013–2023)",
+                hAxis: {
+                    title: "Year",
+                    format: "####"
+                },
+                vAxis: {
+                    title: "Population",
+                    minValue: 0
+                },
+                legend: {
+                    position: "bottom"
+                },
+                colors: ["#3366cc", "#dc3912", "#109618"],
+                chartArea: {
+                    width: "75%",
+                    height: "65%"
+                }
+            };
+
+            var trendChart = new google.visualization.LineChart(
+                document.getElementById("population_trend_chart")
+            );
+
+            trendChart.draw(trendData, trendOptions);
+
+
+            // Consolidation Task 3: fictional monthly sales data
+            var salesData = google.visualization.arrayToDataTable([
+                ["Month", "Sales", { role: "style" }],
+                ["January", 1200, "#3366cc"],
+                ["February", 1500, "#dc3912"],
+                ["March", 1800, "#ff9900"],
+                ["April", 1600, "#109618"],
+                ["May", 2200, "#990099"],
+                ["June", 2500, "#0099c6"],
+                ["July", 2800, "#dd4477"],
+                ["August", 2600, "#66aa00"],
+                ["September", 3100, "#b82e2e"],
+                ["October", 3400, "#316395"],
+                ["November", 3900, "#994499"],
+                ["December", 4500, "#22aa99"]
+            ]);
+
+            var salesOptions = {
+                title: "Monthly Sales in 2023",
+                hAxis: {
+                    title: "Month"
+                },
+                vAxis: {
+                    title: "Sales (in GBP)",
+                    minValue: 0
+                },
+                legend: {
+                    position: "none"
+                },
+                chartArea: {
+                    width: "80%",
+                    height: "65%"
+                }
+            };
+
+            var salesChart = new google.visualization.ColumnChart(
+                document.getElementById("sales_chart")
+            );
+
+            salesChart.draw(salesData, salesOptions);
+        }
+
+
+        // H3 LO 3.3: retrieve the latest commit time from GitHub
+        async function getLastUpdatedTime() {
+
+            // Your GitHub username and repository
+            const username = "FEPSFY7006838";
+            const repo = "FY7006838";
+
+            const url =
+                `https://api.github.com/repos/${username}/${repo}/commits`;
+
+            try {
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/vnd.github+json"
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(
+                        "GitHub API error: " +
+                        response.status + " " + response.statusText
+                    );
+                }
+
+                const commits = await response.json();
+
+                if (commits.length > 0) {
+                    const lastCommitDate = new Date(
+                        commits[0].commit.committer.date
+                    );
+
+                    document.getElementById("last-updated").textContent =
+                        "Last Modified Time: " +
+                        lastCommitDate.toLocaleString();
+                } else {
+                    document.getElementById("last-updated").textContent =
+                        "No commits found in the repository.";
+                }
+
+            } catch (error) {
+                console.error("Error fetching last updated time:", error);
+
+                document.getElementById("last-updated").textContent =
+                    "Error fetching update time. Check the repository details.";
+            }
+        }
+
+
+        // Verify the timestamp by fetching it again
+        async function verifyLastUpdatedTime() {
+            document.getElementById("last-updated").textContent =
+                "Verifying...";
+
+            await getLastUpdatedTime();
+
+            if (document.getElementById("last-updated").textContent
+                .startsWith("Last Modified Time:")) {
+                alert("Last modified time successfully retrieved from GitHub.");
+            } else {
+                alert("Could not verify the time. Check the repository details.");
+            }
+        }
+
+
+        // Display timestamp and word count when the page loads
+        window.addEventListener("load", function () {
+            getLastUpdatedTime();
+            displayTotalWordCount();
+        });
+
+
+        // H3 LO 3.4: count words in a specified section
+        function displayWordCount(sectionId) {
+            const section = document.getElementById(sectionId);
+
+            if (!section) {
+                return 0;
+            }
+
+            const text = section.textContent.trim();
+
+            if (text === "") {
+                return 0;
+            }
+
+            return text.split(/\s+/).length;
+        }
+
+
+        // Count Introduction and Analysis and Discussion only
+        function displayTotalWordCount() {
+            const introductionCount =
+                displayWordCount("Introduction_InText");
+
+            const analysisCount =
+                displayWordCount("Analysis_InText");
+
+            const totalWordCount =
+                introductionCount + analysisCount;
+
+            document.getElementById("totalWordCount").textContent =
+                "Total word count: " + totalWordCount;
+        }
+    </script>
 
 </body>
 </html>
