@@ -1,522 +1,204 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ENG0018 Conference Paper - Bridge Deck Repairs</title>
-
-    <!-- W3.CSS stylesheet -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <!-- Google Charts library -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-
-    <style>
-        body {
-            background-color: white;
-            margin-left: 50px;
-            margin-right: 50px;
-            font-family: Arial, sans-serif;
-            color: black;
-        }
-
-        h1 {
-            font-size: 30px;
-            color: black;
-        }
-
-        h2 {
-            font-family: Calibri, sans-serif;
-            color: black;
-        }
-
-        h3 {
-            color: navy;
-        }
-
-        hr {
-            border: 1px solid black;
-        }
-
-        p.ex1 {
-            margin-left: 250px;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #d9eaf7;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .chart {
-            width: 100%;
-            min-height: 400px;
-            margin-bottom: 30px;
-        }
-
-        button {
-            padding: 8px 16px;
-            margin: 8px 0;
-            cursor: pointer;
-        }
-
-        input {
-            padding: 8px;
-            margin: 8px 0;
-        }
-
-        #last-updated, #totalWordCount {
-            font-weight: bold;
-            margin-top: 15px;
-        }
-
-        pre {
-            white-space: pre-wrap;
-            overflow-wrap: break-word;
-            font-family: Arial, sans-serif;
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Conference paper banner -->
-    <img src="WebBanner2026.png" alt="University of Surrey banner">
-
-    <hr>
-
-    <h2>ENG0018 Computer Laboratory 2026/27</h2>
-    <p>URN: 7006838</p>
-
-    <hr>
-
-    <h2>Conference Paper: Bridge Deck Repairs</h2>
-
-    <hr>
-
-    <!-- Table of contents -->
-    <h2>Table of Contents</h2>
-
-    <table>
-        <tr>
-            <th>Table of contents</th>
-        </tr>
-        <tr>
-            <td><a href="#Abstract">Abstract</a></td>
-        </tr>
-        <tr>
-            <td><a href="#Introduction">Introduction</a></td>
-        </tr>
-        <tr>
-            <td><a href="#Analysis-and-discussion">Analysis and discussion</a></td>
-        </tr>
-        <tr>
-            <td><a href="#References">References</a></td>
-        </tr>
-    </table>
-
-    <hr>
-
-    <!-- Abstract -->
-    <h2 id="Abstract">Abstract</h2>
-
-    <pre>
-This conference paper considers the cost and lifespan of bridge deck repairs.
-Different repair options can be compared by considering their costs and
-expected lifespans.
-    </pre>
-
-    <hr>
-
-    <!-- Introduction: this section is included in the word count -->
-    <h2 id="Introduction">Introduction</h2>
-
-    <pre id="Introduction_InText">Bridge deck repairs are important for maintaining the safety and durability of bridges. Selecting a repair method requires consideration of its cost and expected lifespan. Engineers must compare the financial cost of a repair with how long the repair is expected to last. This helps inform decisions about the maintenance and long-term performance of bridge infrastructure.</pre>
-
-    <hr>
-
-    <!-- Analysis and discussion: this section is included in the word count -->
-    <h2 id="Analysis-and-discussion">Analysis and discussion</h2>
-
-    <p id="Analysis_InText">
-        The table below compares the cost of repairs with the lifespan of each
-        repair option. The figures illustrate that repair options can differ
-        considerably in both cost and expected lifespan. These values should
-        be considered when assessing the long-term value of different repairs.
-    </p>
-
-    <table>
-        <tr>
-            <th>£ Cost of repairs</th>
-            <th>Lifespan of repairs (years)</th>
-        </tr>
-        <tr>
-            <td>£0.7 million</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>£3.3 million</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>£2.6 million</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>£17.4 million</td>
-            <td>7</td>
-        </tr>
-        <tr>
-            <td>£8.8 million</td>
-            <td>9</td>
-        </tr>
-    </table>
-
-    <hr>
-
-    <!-- H3: JavaScript demonstration -->
-    <h2>JavaScript Demonstration</h2>
-
-    <h3>Change Button Colour</h3>
-    <button id="colourButton">Click me to change colour</button>
-
-    <h3>Consolidation Task 1: Text Input and Alert</h3>
-    <label for="userInput">Enter some text:</label>
-    <input type="text" id="userInput" placeholder="Type your message">
-    <button id="alertButton">Display Alert</button>
-
-    <h3>Consolidation Task 2: Random Number</h3>
-    <p id="randomNumberText">Click the button to generate a random number.</p>
-    <button id="randomNumberButton">Generate Random Number</button>
-
-    <hr>
-
-    <!-- H3: Consolidation Task 1 - city population bar chart -->
-    <h2>City Population in 2023</h2>
-    <p>Population of London, Birmingham and Edinburgh in 2023.</p>
-    <div id="population_chart" class="chart"></div>
-
-    <hr>
-
-    <!-- H3: Consolidation Task 2 - population trend line chart -->
-    <h2>Population Trends Over Time</h2>
-    <p>Population figures for London, Birmingham and Edinburgh from 2013 to 2023.</p>
-    <div id="population_trend_chart" class="chart"></div>
-
-    <hr>
-
-    <!-- H3: Consolidation Task 3 - monthly sales column chart -->
-    <h2>Monthly Sales in 2023</h2>
-    <p>Illustrative monthly sales data for a fictional online store.</p>
-    <div id="sales_chart" class="chart"></div>
-
-    <hr>
-
-    <!-- References -->
-    <h2 id="References">References</h2>
-
-    <h3>Reference 1</h3>
-    <p>
-        <a href="https://www.icevirtuallibrary.com/doi/full/10.1680/jbren.21.00034">
-            Toshihiko et al (2023)
-        </a>
-    </p>
-
-    <hr>
-
-    <!-- H3: GitHub last modified timestamp -->
-    <h2>Submission Validation</h2>
-
-    <p id="last-updated">Loading last update time...</p>
-
-    <button onclick="verifyLastUpdatedTime()">
-        Verify Last Modified Time
-    </button>
-
-    <hr>
-
-    <!-- H3: word count -->
-    <p id="totalWordCount">Total word count: calculating...</p>
-
-    <script>
-        // Change the button to a random colour when clicked
-        var button = document.getElementById("colourButton");
-
-        function changeColour() {
-            var randomColour = "#" +
-                Math.floor(Math.random() * 16777215)
-                    .toString(16)
-                    .padStart(6, "0");
-
-            button.style.backgroundColor = randomColour;
-        }
-
-        button.addEventListener("click", changeColour);
-
-
-        // Consolidation Task 1: display entered text in an alert
-        document.getElementById("alertButton").addEventListener("click", function () {
-            var enteredText = document.getElementById("userInput").value;
-            alert(enteredText);
-        });
-
-
-        // Consolidation Task 2: display a random number between 1 and 10
-        document.getElementById("randomNumberButton").addEventListener("click", function () {
-            var randomNumber = Math.floor(Math.random() * 10) + 1;
-
-            document.getElementById("randomNumberText").textContent =
-                "Random number: " + randomNumber;
-        });
-
-
-        // Load Google Charts
-        google.charts.load("current", {
-            packages: ["corechart"]
-        });
-
-        google.charts.setOnLoadCallback(drawCharts);
-
-
-        // Draw all three charts
-        function drawCharts() {
-
-            // Consolidation Task 1: city population bar chart
-            var populationData = google.visualization.arrayToDataTable([
-                ["City", "Population"],
-                ["London", 9648000],
-                ["Birmingham", 1153900],
-                ["Edinburgh", 554000]
-            ]);
-
-            var populationOptions = {
-                title: "City Population in 2023",
-                hAxis: {
-                    title: "Population",
-                    minValue: 0
-                },
-                vAxis: {
-                    title: "City"
-                },
-                legend: {
-                    position: "none"
-                },
-                colors: ["#3366cc"],
-                chartArea: {
-                    width: "75%",
-                    height: "70%"
-                }
-            };
-
-            var populationChart = new google.visualization.BarChart(
-                document.getElementById("population_chart")
-            );
-
-            populationChart.draw(populationData, populationOptions);
-
-
-            // Consolidation Task 2: population trend line chart
-            var trendData = google.visualization.arrayToDataTable([
-                ["Year", "London", "Birmingham", "Edinburgh"],
-                [2013, 8414000, 1092200, 495000],
-                [2015, 8661000, 1113000, 507000],
-                [2017, 8916000, 1137100, 519000],
-                [2019, 9177000, 1141800, 531000],
-                [2021, 9426000, 1142500, 543000],
-                [2023, 9648000, 1153900, 554000]
-            ]);
-
-            var trendOptions = {
-                title: "City Population Trends (2013–2023)",
-                hAxis: {
-                    title: "Year",
-                    format: "####"
-                },
-                vAxis: {
-                    title: "Population",
-                    minValue: 0
-                },
-                legend: {
-                    position: "bottom"
-                },
-                colors: ["#3366cc", "#dc3912", "#109618"],
-                chartArea: {
-                    width: "75%",
-                    height: "65%"
-                }
-            };
-
-            var trendChart = new google.visualization.LineChart(
-                document.getElementById("population_trend_chart")
-            );
-
-            trendChart.draw(trendData, trendOptions);
-
-
-            // Consolidation Task 3: fictional monthly sales data
-            var salesData = google.visualization.arrayToDataTable([
-                ["Month", "Sales", { role: "style" }],
-                ["January", 1200, "#3366cc"],
-                ["February", 1500, "#dc3912"],
-                ["March", 1800, "#ff9900"],
-                ["April", 1600, "#109618"],
-                ["May", 2200, "#990099"],
-                ["June", 2500, "#0099c6"],
-                ["July", 2800, "#dd4477"],
-                ["August", 2600, "#66aa00"],
-                ["September", 3100, "#b82e2e"],
-                ["October", 3400, "#316395"],
-                ["November", 3900, "#994499"],
-                ["December", 4500, "#22aa99"]
-            ]);
-
-            var salesOptions = {
-                title: "Monthly Sales in 2023",
-                hAxis: {
-                    title: "Month"
-                },
-                vAxis: {
-                    title: "Sales (in GBP)",
-                    minValue: 0
-                },
-                legend: {
-                    position: "none"
-                },
-                chartArea: {
-                    width: "80%",
-                    height: "65%"
-                }
-            };
-
-            var salesChart = new google.visualization.ColumnChart(
-                document.getElementById("sales_chart")
-            );
-
-            salesChart.draw(salesData, salesOptions);
-        }
-
-
-        // H3 LO 3.3: retrieve the latest commit time from GitHub
-        async function getLastUpdatedTime() {
-
-            // Your GitHub username and repository
-            const username = "FEPSFY7006838";
-            const repo = "FY7006838";
-
-            const url =
-                `https://api.github.com/repos/${username}/${repo}/commits`;
-
-            try {
-                const response = await fetch(url, {
-                    method: "GET",
-                    headers: {
-                        "Accept": "application/vnd.github+json"
-                    }
-                });
-
-                if (!response.ok) {
-                    throw new Error(
-                        "GitHub API error: " +
-                        response.status + " " + response.statusText
-                    );
-                }
-
-                const commits = await response.json();
-
-                if (commits.length > 0) {
-                    const lastCommitDate = new Date(
-                        commits[0].commit.committer.date
-                    );
-
-                    document.getElementById("last-updated").textContent =
-                        "Last Modified Time: " +
-                        lastCommitDate.toLocaleString();
-                } else {
-                    document.getElementById("last-updated").textContent =
-                        "No commits found in the repository.";
-                }
-
-            } catch (error) {
-                console.error("Error fetching last updated time:", error);
-
-                document.getElementById("last-updated").textContent =
-                    "Error fetching update time. Check the repository details.";
-            }
-        }
-
-
-        // Verify the timestamp by fetching it again
-        async function verifyLastUpdatedTime() {
-            document.getElementById("last-updated").textContent =
-                "Verifying...";
-
-            await getLastUpdatedTime();
-
-            if (document.getElementById("last-updated").textContent
-                .startsWith("Last Modified Time:")) {
-                alert("Last modified time successfully retrieved from GitHub.");
-            } else {
-                alert("Could not verify the time. Check the repository details.");
-            }
-        }
-
-
-        // Display timestamp and word count when the page loads
-        window.addEventListener("load", function () {
-            getLastUpdatedTime();
-            displayTotalWordCount();
-        });
-
-
-        // H3 LO 3.4: count words in a specified section
-        function displayWordCount(sectionId) {
-            const section = document.getElementById(sectionId);
-
-            if (!section) {
-                return 0;
-            }
-
-            const text = section.textContent.trim();
-
-            if (text === "") {
-                return 0;
-            }
-
-            return text.split(/\s+/).length;
-        }
-
-
-        // Count Introduction and Analysis and Discussion only
-        function displayTotalWordCount() {
-            const introductionCount =
-                displayWordCount("Introduction_InText");
-
-            const analysisCount =
-                displayWordCount("Analysis_InText");
-
-            const totalWordCount =
-                introductionCount + analysisCount;
-
-            document.getElementById("totalWordCount").textContent =
-                "Total word count: " + totalWordCount;
-        }
-    </script>
-
-</body>
-</html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can We Keep Earth's Orbit Safe? | Space Debris</title>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <style>
+    :root {
+      --navy: #10243a;
+      --blue: #1769aa;
+      --light: #f2f6fa;
+      --text: #253447;
+      --muted: #64748b;
+      --border: #d7e0e8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--light);
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 38px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 auto 10px;
+      max-width: 850px;
+      line-height: 1.25;
+    }
+
+    header p {
+      margin: 0;
+      color: #d6e5f5;
+    }
+
+    nav {
+      background: #ffffff;
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 4px 10px;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      width: min(100% - 32px, 950px);
+      margin: 28px auto;
+    }
+
+    article, .panel {
+      background: white;
+      padding: 28px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    h2, h3 {
+      color: var(--navy);
+      line-height: 1.35;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e4edf5;
+      padding-bottom: 8px;
+      margin-top: 32px;
+    }
+
+    .abstract {
+      background: #edf5fc;
+      padding: 18px;
+      border-left: 4px solid var(--blue);
+      border-radius: 4px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    figure {
+      margin: 22px 0;
+      padding: 16px;
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    figure img {
+      max-width: 100%;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .chart {
+      width: 100%;
+      min-height: 330px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 11px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eaf2f9;
+      color: var(--navy);
+    }
+
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    a {
+      overflow-wrap: anywhere;
+    }
+
+    .demo {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 14px 0;
+    }
+
+    button {
+      background: var(--blue);
+      color: white;
+      border: 0;
+      padding: 10px 15px;
+      margin: 5px 5px 5px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--navy);
+    }
+
+    input {
+      padding: 10px;
+      max-width: 100%;
+      border: 1px solid #9aaabd;
+      border-radius: 5px;
+    }
+
+    .result {
+      font-weight: bold;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: var(--navy);
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      article, .panel {
+        padding: 18px;
+      }
+
+      header {
+        padding: 28px 16px;
+      }
+
+      .chart {
+        min-height: 280px;
+      }
+    }        
