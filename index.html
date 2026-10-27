@@ -1,371 +1,1217 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Can We Keep Earth's Orbit Safe? | Space Debris</title>
-  <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <style>
-    :root {
-      --navy: #10243a;
-      --blue: #1769aa;
-      --light: #f2f6fa;
-      --text: #253447;
-      --muted: #64748b;
-      --border: #d7e0e8;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * {
-      box-sizing: border-box;
-    }
+    <title>Can We Keep Earth's Orbit Safe? | ENG0018</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--light);
-    }
+    <!-- Google Charts library for the H3 chart requirements -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 38px 20px;
-      text-align: center;
-    }
+    <style>
+        /* =========================
+           H1-H2: PAGE DESIGN
+        ========================= */
 
-    header h1 {
-      margin: 0 auto 10px;
-      max-width: 850px;
-      line-height: 1.25;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    header p {
-      margin: 0;
-      color: #d6e5f5;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f6;
+            color: #252f3b;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
 
-    nav {
-      background: #ffffff;
-      padding: 12px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
+        .university-banner {
+            background: linear-gradient(120deg, #002147, #005b96);
+            color: white;
+            padding: 28px 20px;
+            text-align: center;
+            border-bottom: 5px solid #e5b54b;
+        }
 
-    nav a {
-      display: inline-block;
-      margin: 4px 10px;
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .university-banner h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
 
-    main {
-      width: min(100% - 32px, 950px);
-      margin: 28px auto;
-    }
+        .university-banner p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+        }
 
-    article, .panel {
-      background: white;
-      padding: 28px;
-      margin-bottom: 24px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
+        .module-heading {
+            text-align: center;
+            margin: 25px 10px 5px;
+            color: #002147;
+            font-size: 1.5rem;
+        }
 
-    h2, h3 {
-      color: var(--navy);
-      line-height: 1.35;
-    }
+        .urn-heading {
+            text-align: center;
+            font-size: 1.05rem;
+            font-weight: normal;
+            margin: 0 10px 20px;
+        }
 
-    h2 {
-      border-bottom: 2px solid #e4edf5;
-      padding-bottom: 8px;
-      margin-top: 32px;
-    }
+        .page-container {
+            max-width: 1050px;
+            margin: 0 auto 35px;
+            padding: 25px;
+            background-color: white;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
 
-    .abstract {
-      background: #edf5fc;
-      padding: 18px;
-      border-left: 4px solid var(--blue);
-      border-radius: 4px;
-    }
+        .article-title {
+            text-align: center;
+            color: #002147;
+            font-size: 2rem;
+            line-height: 1.3;
+            margin: 22px 0;
+        }
 
-    .meta {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+        .subtitle {
+            text-align: center;
+            color: #526477;
+            margin-bottom: 25px;
+        }
 
-    figure {
-      margin: 22px 0;
-      padding: 16px;
-      background: #fbfdff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
+        h2 {
+            color: #004b7c;
+            margin-top: 35px;
+            border-bottom: 2px solid #dce6ef;
+            padding-bottom: 7px;
+        }
 
-    figure img {
-      max-width: 100%;
-    }
+        h3 {
+            color: #175b84;
+            margin-top: 25px;
+        }
 
-    figcaption {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 8px;
-    }
+        p {
+            text-align: justify;
+        }
 
-    .chart {
-      width: 100%;
-      min-height: 330px;
-    }
+        a {
+            color: #005b96;
+        }
 
-    .table-wrap {
-      overflow-x: auto;
-    }
+        a:hover {
+            color: #00365a;
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 18px 0;
-    }
+        .contents {
+            background-color: #f2f6fa;
+            border-left: 5px solid #005b96;
+            padding: 18px 25px;
+            margin: 25px 0;
+        }
 
-    th, td {
-      border: 1px solid var(--border);
-      padding: 11px;
-      text-align: left;
-      vertical-align: top;
-    }
+        .contents h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
 
-    th {
-      background: #eaf2f9;
-      color: var(--navy);
-    }
+        .contents ol {
+            padding-left: 25px;
+        }
 
-    tr:nth-child(even) {
-      background: #f8fafc;
-    }
+        .contents li {
+            margin: 6px 0;
+        }
 
-    a {
-      overflow-wrap: anywhere;
-    }
+        .abstract {
+            background-color: #f7f9fb;
+            padding: 18px 22px;
+            border: 1px solid #dce6ef;
+            border-radius: 5px;
+        }
 
-    .demo {
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin: 14px 0;
-    }
+        .data-note {
+            background-color: #fff8e6;
+            border-left: 4px solid #d5a12b;
+            padding: 12px 16px;
+            margin: 18px 0;
+            font-size: 0.94rem;
+        }
 
-    button {
-      background: var(--blue);
-      color: white;
-      border: 0;
-      padding: 10px 15px;
-      margin: 5px 5px 5px 0;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+        .chart-container {
+            width: 100%;
+            min-height: 380px;
+            margin: 15px 0 30px;
+            border: 1px solid #e0e7ed;
+            border-radius: 5px;
+            padding: 10px;
+            background: #fff;
+        }
 
-    button:hover {
-      background: var(--navy);
-    }
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
 
-    input {
-      padding: 10px;
-      max-width: 100%;
-      border: 1px solid #9aaabd;
-      border-radius: 5px;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
 
-    .result {
-      font-weight: bold;
-      overflow-wrap: anywhere;
-    }
+        th, td {
+            border: 1px solid #cbd5df;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
 
-    footer {
-      text-align: center;
-      padding: 24px;
-      background: var(--navy);
-      color: white;
-    }
+        th {
+            background-color: #e6eff7;
+            color: #002147;
+        }
 
-    @media (max-width: 600px) {
-      article, .panel {
-        padding: 18px;
-      }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
 
-      header {
-        padding: 28px 16px;
-      }
+        .equation {
+            text-align: center;
+            background-color: #f5f7fa;
+            padding: 15px;
+            margin: 18px 0;
+            font-size: 1.15rem;
+            overflow-x: auto;
+        }
 
-      .chart {
-        min-height: 280px;
-      }
-    }        
-      </style>
+        .source-list li {
+            margin-bottom: 15px;
+            overflow-wrap: anywhere;
+        }
+
+        .timestamp-box {
+            background-color: #f2f6fa;
+            border: 1px solid #d3dfe9;
+            padding: 18px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #005b96;
+            color: white;
+            border: none;
+            padding: 11px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #003f69;
+        }
+
+        #timestamp-status {
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        .word-count-box {
+            margin-top: 20px;
+            padding: 14px 18px;
+            background-color: #eef6ee;
+            border-left: 4px solid #43834a;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #002147;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 650px) {
+            .page-container {
+                padding: 16px;
+            }
+
+            .article-title {
+                font-size: 1.6rem;
+            }
+
+            .university-banner h1 {
+                font-size: 1.5rem;
+            }
+
+            .chart-container {
+                min-height: 320px;
+                padding: 2px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Can We Keep Earth's Orbit Safe?</h1>
-  <p>The Engineering Challenge of Space Debris</p>
-</header>
+    <!-- =========================
+         H1: UNIVERSITY BANNER
+    ========================== -->
 
-<nav aria-label="Main navigation">
-  <a href="#introduction">Introduction</a>
-  <a href="#risks">Risks</a>
-  <a href="#solutions">Solutions</a>
-  <a href="#data">Data</a>
-  <a href="#references">References</a>
-  <a href="#demos">JavaScript demos</a>
-</nav>
+    <header class="university-banner">
+        <h1>University of Surrey</h1>
+        <p>School of Engineering</p>
+    </header>
 
-<main>
+    <!-- =========================
+         H2: MODULE AND STUDENT DETAILS
+    ========================== -->
 
-<article id="article">
+    <h1 class="module-heading">
+        <b>ENG0018 Computer Laboratory 2026/27</b>
+    </h1>
 
-  <p class="meta">
-    Subject: Aerospace Engineering | Topic: Orbital sustainability
-  </p>
+    <!-- Replace 123456 with your actual student URN -->
+    <h2 class="urn-heading" style="border-bottom: none;">
+        Student URN: 123456
+    </h2>
 
-  <section class="abstract">
-    <h2>Abstract</h2>
-    <p>
-      Space debris is an increasing engineering challenge because inactive
-      satellites, discarded rocket stages and fragments from collisions
-      occupy useful orbital regions. These objects can damage operational
-      spacecraft and increase the cost and complexity of space missions.
-      This article examines the main physical risks, the possibility of
-      collision-driven debris growth, and engineering approaches that may
-      reduce the problem. These include preventing debris during mission
-      design, removing satellites from orbit at the end of their lives and
-      developing technologies to remove existing objects. The evidence
-      suggests that space sustainability requires both improved spacecraft
-      design and coordinated international action.
-    </p>
-  </section>
+    <main class="page-container">
 
-  <section id="introduction">
-    <h2>1. Introduction</h2>
+        <hr>
 
-    <p>
-      Satellites support services such as communications, navigation,
-      weather forecasting and Earth observation. These systems have become
-      important to modern society, but their continued operation depends
-      on a usable and relatively safe orbital environment.
-    </p>
+        <h1 class="article-title">
+            Can We Keep Earth's Orbit Safe?
+            The Engineering Challenge of Space Debris
+        </h1>
 
-    <p>
-      Space debris includes inactive spacecraft, abandoned rocket bodies
-      and fragments produced when objects break apart. Some objects are
-      large enough to track routinely, while smaller fragments may be
-      difficult to detect but can still damage spacecraft. The European
-      Space Agency (ESA, 2025) describes debris as a growing environmental
-      challenge around Earth.
-    </p>
+        <p class="subtitle">
+            An engineering perspective on orbital debris, collision risk
+            and sustainable spaceflight
+        </p>
 
-    <p>
-      The problem is not limited to the number of objects in orbit.
-      Their velocities, orbital paths and the difficulty of repairing
-      spacecraft in space all affect the risk. Consequently, aerospace
-      engineers must consider debris throughout a mission, from initial
-      design to disposal at the end of operational life.  </section>
+        <hr>
 
-  <section id="risks">
-    <h2>2. Why is space debris dangerous?</h2>
+        <!-- =========================
+             H2: TABLE OF CONTENTS
+        ========================== -->
 
-    <h3>2.1 High-speed impacts</h3>
+        <nav class="contents" aria-label="Table of contents">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#abstract">Abstract</a></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#scale">The Scale of the Problem</a></li>
+                <li><a href="#impact">Why Space Debris Is Dangerous</a></li>
+                <li><a href="#solutions">Engineering Solutions</a></li>
+                <li><a href="#data-analysis">Data and Analysis</a></li>
+                <li><a href="#future">What Needs to Happen Next?</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#references">References</a></li>
+            </ol>
+        </nav>
 
-    <p>
-      An object does not need to be particularly large to cause damage
-      when it collides with a spacecraft. Orbital objects travel at
-      several kilometres per second. NASA explains that debris impact
-      speeds in low Earth orbit can average around 10 km/s, although
-      the exact speed depends on the orbits involved (NASA, n.d.).
-    </p>
+        <!-- =========================
+             ABSTRACT
+        ========================== -->
 
-    <p>
-      The kinetic energy of a moving object is described by:
-    </p>
+        <section id="abstract" class="abstract">
+            <h2>Abstract</h2>
 
-    <p>
-      <strong>E = ½mv²</strong>
-    </p>
+            <p>
+                Space debris is an increasing challenge for the long-term
+                sustainability of spaceflight. Defunct satellites, spent
+                rocket stages and fragments from collisions remain in orbit
+                and can damage operational spacecraft. Because objects in
+                low Earth orbit travel at several kilometres per second,
+                even relatively small fragments can carry considerable
+                impact energy. This article examines the scale of orbital
+                debris, the engineering risks created by high-speed
+                collisions, and approaches to reducing the problem.
+                These approaches include preventing new debris, safely
+                disposing of satellites at the end of their missions,
+                improving collision avoidance and developing active debris
+                removal technologies. Published data from the European
+                Space Agency (ESA) and NASA are used to illustrate the
+                scale of the challenge and the importance of coordinated
+                engineering and policy decisions.
+            </p>
+        </section>
 
-    <p>
-      In this equation, E represents kinetic energy in joules, m is
-      mass in kilograms and v is speed in metres per second. Because
-      speed is squared, an increase in impact velocity can produce a
-      substantial increase in energy. This helps explain why small
-      fragments can threaten spacecraft components.
-    </p>
+        <!-- =========================
+             INTRODUCTION
+             Word-count section starts here
+        ========================== -->
 
-    <figure>
-      <div id="impact_speed_chart" class="chart"
-           role="img"
-           aria-label="Chart comparing kinetic energy per kilogram at different impact speeds">
-      </div>
-      <figcaption>
-        Figure 1. Kinetic energy per kilogram at different speeds,
-        calculated using E/m = ½v². Values are illustrative calculations,
-        not measurements of individual collisions.
-      </figcaption>
-    </figure>
+        <section id="introduction">
+            <h2>1. Introduction</h2>
 
-    <h3>2.2 Collision cascades</h3>
+            <div id="Introduction_InText">
+                <p>
+                    Satellites support many services used in everyday life,
+                    including communications, navigation, weather
+                    forecasting and Earth observation. Spacecraft also
+                    provide important scientific information about the
+                    Earth, the Solar System and the wider universe.
+                    As more satellites are launched, however, the orbital
+                    environment becomes more crowded.
+                </p>
 
-    <p>
-      A major concern is that a collision between objects can create
-      additional fragments. These fragments may then collide with other
-      spacecraft or debris, potentially creating still more fragments.
-      Kessler and Cour-Palais (1978) described the possibility of a
-      self-generating debris population in which collisions contribute
-      to continued growth.
-    </p>
+                <p>
+                    Space debris refers to human-made objects in orbit that
+                    no longer serve a useful purpose. Examples include
+                    inactive satellites, discarded rocket stages and
+                    fragments created when objects collide or break apart.
+                    Unlike objects on Earth, orbital debris cannot simply
+                    be collected using conventional waste-management
+                    methods. Removing it requires specialised spacecraft,
+                    carefully planned trajectories and reliable tracking.
+                </p>
 
-    <p>
-      This does not mean every collision automatically creates an
-      unstoppable cascade. The outcome depends on factors including
-      object density, orbital altitude, collision probability and
-      the effectiveness of debris mitigation. Nevertheless, the
-      possibility makes prevention and long-term monitoring important.
-    </p>
+                <p>
+                    The European Space Agency reports that debris continues
+                    to increase and that collisions can create additional
+                    fragments. This means the problem is not limited to
+                    the objects already present in orbit. A collision can
+                    create more debris, which can subsequently threaten
+                    other spacecraft. Long-term orbital sustainability
+                    therefore depends on preventing new debris as well as
+                    managing existing objects.
+                </p>
 
-    <h3>2.3 The scale of the problem</h3>
+                <p>
+                    This article considers the problem from an aerospace
+                    engineering perspective. It examines the estimated
+                    debris population, the physical reasons that debris is
+                    dangerous, and the engineering measures that can help
+                    keep useful orbital regions available for future
+                    missions.
+                </p>
+            </div>
+        </section>
 
-    <p>
-      ESA's 2025 space environment report estimates that more than
-      1.2 million objects larger than 1 centimetre and more than
-      50,000 objects larger than 10 centimetres are in Earth orbit
-      (ESA, 2025). These categories overlap: the objects larger than
-      10 centimetres are also part of the population larger than
-      1 centimetre, so the figures must not be added together.
-    </p>
+        <!-- =========================
+             SCALE OF THE PROBLEM
+        ========================== -->
 
-    <p>
-      Objects of different sizes require different monitoring and
-      protection approaches. Larger objects are generally easier to
-      track, while smaller fragments may be too small to monitor
-      reliably but can still pose a serious impact hazard.
-    </p>
+        <section id="scale">
+            <h2>2. The Scale of the Problem</h2>
 
-    <figure>
-      <div id="debris_population_chart" class="chart"
-           role="img"
-           aria-label="Chart comparing estimated orbital debris populations by size">
-      </div>
-      <figcaption>
-        Figure 2. ESA's 2025 estimates for objects larger than 1 cm
-        and 10 cm. The categories overlap and are shown for comparison,
-        not as separate populations.
-      </figcaption>
-    </figure>
-  </section>
-    </p>
+            <p>
+                The number of objects that can be tracked is much smaller
+                than the estimated number of smaller fragments. According
+                to ESA's 2026 Space Environment Report, its model estimates
+                approximately 68,450 objects larger than 10 cm, 1.5 million
+                objects between 1 and 10 cm, and 230 million objects between
+                1 mm and 1 cm in the space environment covered by the
+                report's estimates.
+            </p>
 
-    <p>
-      This article considers three questions: why debris is dangerous,
-      which engineering approaches can reduce the risk, and why prevention
-      needs to be combined with international cooperation.
-    </p>
-    
+            <p>
+                These categories describe different size ranges. The
+                smaller size ranges contain many more objects, while the
+                larger objects are generally easier for surveillance
+                networks to detect and track. The numbers are estimates
+                produced using space-environment modelling and should not
+                be interpreted as a direct count of every object.
+            </p>
+
+            <div class="data-note">
+                <strong>Data note:</strong>
+                The size-category figures below are taken from ESA's
+                Space Environment Statistics page, updated in October 2026.
+                They are estimated populations, not a list of individually
+                tracked objects. The categories are displayed by size range
+                to avoid adding overlapping or differently defined
+                populations together.
+                <br>
+                Source:
+                <a href="https://sdup.esoc.esa.int/discosweb/statistics/"
+                   target="_blank" rel="noopener noreferrer">
+                    ESA Space Environment Statistics
+                </a>
+            </div>
+
+            <h3>2.1 Estimated debris population by size</h3>
+
+            <p>
+                The chart uses a logarithmic vertical scale because the
+                estimated populations range from tens of thousands to
+                hundreds of millions. Without a logarithmic scale, the
+                smaller categories would be difficult to compare visually.
+            </p>
+
+            <div id="debrisSizeChart"
+                 class="chart-container"
+                 role="img"
+                 aria-label="Chart of ESA estimated space-object populations by size range">
+                Loading chart...
+            </div>
+
+            <h3>2.2 What these estimates mean</h3>
+
+            <p>
+                Large objects can cause severe damage if they collide with
+                an operational spacecraft. Smaller fragments are also
+                important because they are much more numerous and may be
+                too small to track reliably. A spacecraft operator may
+                therefore be unable to avoid every potentially dangerous
+                fragment.
+            </p>
+
+            <p>
+                ESA's 2026 report also describes the increasing number of
+                launches and payloads placed into orbit. The challenge is
+                consequently both operational and environmental: space
+                operators must protect current missions while ensuring
+                that future spacecraft can continue to use important
+                orbital regions.
+            </p>
+        </section>
+
+        <!-- =========================
+             ANALYSIS AND DISCUSSION
+             Word-count section
+        ========================== -->
+
+        <section id="impact">
+            <h2>3. Why Space Debris Is Dangerous</h2>
+
+            <div id="Analysis_InText">
+                <h3>3.1 High-speed impacts and kinetic energy</h3>
+
+                <p>
+                    Orbital debris is dangerous partly because of its
+                    velocity. NASA explains that objects in low Earth orbit
+                    travel at approximately 7–8 km/s. The average impact
+                    speed between orbital objects is around 10 km/s and
+                    can reach approximately 15 km/s.
+                </p>
+
+                <p>
+                    The kinetic energy of a moving object depends on its
+                    mass and velocity. It can be calculated using the
+                    following equation:
+                </p>
+
+                <div class="equation">
+                    E<sub>k</sub> = ½mv<sup>2</sup>
+                </div>
+
+                <p>
+                    In this equation, E<sub>k</sub> is kinetic energy in
+                    joules, m is mass in kilograms, and v is velocity in
+                    metres per second. The squared velocity term means
+                    that increasing speed has a substantial effect on
+                    kinetic energy. A small fragment can therefore cause
+                    serious damage if it strikes a spacecraft at orbital
+                    speeds.
+                </p>
+
+                <p>
+                    NASA's orbital-debris guidance describes how impacts
+                    can damage spacecraft surfaces, puncture components
+                    or cause a catastrophic failure. The outcome depends
+                    on the mass and velocity of the debris, the impact
+                    location and the spacecraft's design.
+                </p>
+
+                <h3>3.2 Comparing orbital speeds</h3>
+
+                <p>
+                    The following chart presents the approximate speed
+                    values described by NASA. These are reference values
+                    for orbital motion and impact speed, not measurements
+                    of a changing trend over time.
+                </p>
+
+                <div id="impactSpeedChart"
+                     class="chart-container"
+                     role="img"
+                     aria-label="NASA reference values for orbital debris speeds">
+                    Loading chart...
+                </div>
+
+                <h3>3.3 Collision cascades</h3>
+
+                <p>
+                    A collision involving a satellite or another large
+                    object can produce many fragments. Those fragments
+                    can then collide with additional objects, generating
+                    more debris. This process is associated with the
+                    concept known as Kessler syndrome, described by
+                    Kessler and Cour-Palais in 1978.
+                </p>
+
+                <p>
+                    The long-term concern is that certain orbital regions
+                    could become increasingly hazardous even if the
+                    number of new launches were reduced. Existing objects
+                    may continue to collide and fragment. Preventing
+                    collisions and removing selected high-risk objects
+                    are therefore important parts of protecting the
+                    orbital environment.
+                </p>
+
+                <h3>3.4 Engineering mitigation and compliance</h3>
+
+                <p>
+                    Mitigation measures include designing satellites so
+                    that they can be safely removed from important orbits,
+                    reducing the chance of explosions after a mission,
+                    and planning controlled re-entry where appropriate.
+                    Operators also use tracking information to assess
+                    conjunctions and plan avoidance manoeuvres when
+                    necessary.
+                </p>
+
+                <p>
+                    ESA's 2025 report described improvements in compliance
+                    with debris-mitigation guidelines. It reported that
+                    around 90% of rocket bodies in low Earth orbit were
+                    complying with the earlier 25-year re-entry standard,
+                    while around 80% were compliant with ESA's newer
+                    five-year standard. These figures refer to rocket
+                    bodies and the report's specified assessment, not all
+                    satellites or all debris.
+                </p>
+            </div>
+        </section>
+
+        <!-- =========================
+             ENGINEERING SOLUTIONS
+        ========================== -->
+
+        <section id="solutions">
+            <h2>4. Engineering Solutions</h2>
+
+            <h3>4.1 Preventing new debris</h3>
+
+            <p>
+                Prevention is one of the most effective ways to reduce
+                future risk. Satellites and launch systems can be designed
+                to minimise the likelihood of explosions or fragmentation.
+                For example, passivation procedures reduce the stored
+                energy left in a spacecraft after its mission by
+                discharging batteries and removing residual propellant
+                where possible.
+            </p>
+
+            <h3>4.2 End-of-life disposal</h3>
+
+            <p>
+                Spacecraft design should account for disposal before a
+                mission begins. Depending on the orbit and spacecraft,
+                disposal can involve controlled re-entry, lowering the
+                orbit to allow atmospheric drag to remove the object over
+                time, or moving it away from heavily used orbital regions.
+                Disposal plans must account for spacecraft reliability,
+                orbital conditions and the risk to people on the ground.
+            </p>
+
+            <h3>4.3 Collision avoidance</h3>
+
+            <p>
+                Tracking networks help operators identify possible close
+                approaches between spacecraft and debris. When a
+                conjunction presents a sufficient risk, a satellite may
+                perform an avoidance manoeuvre. These manoeuvres require
+                accurate orbital information, suitable propulsion and
+                coordination between operators.
+            </p>
+
+            <h3>4.4 Active debris removal</h3>
+
+            <p>
+                Active debris removal aims to capture or otherwise remove
+                selected objects that are already in orbit. Potential
+                approaches include robotic capture, docking mechanisms,
+                nets, harpoons and servicing spacecraft. Each method
+                presents engineering challenges, including target
+                identification, relative navigation, capture stability
+                and the safe disposal of the removed object.
+            </p>
+
+            <p>
+                Active removal is technically challenging and can be
+                expensive, but it may become increasingly important for
+                reducing the risk posed by large objects in crowded
+                orbital regions. ESA's recent reporting identifies
+                active debris removal as necessary to address the
+                continuing growth of the debris population.
+            </p>
+
+            <h3>4.5 Comparing mitigation approaches</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Approach</th>
+                            <th>Purpose</th>
+                            <th>Main engineering challenge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Design for prevention</td>
+                            <td>Reduce the creation of new debris.</td>
+                            <td>Reliable design, testing and compliance.</td>
+                        </tr>
+                        <tr>
+                            <td>End-of-life disposal</td>
+                            <td>Move inactive spacecraft away from valuable orbits.</td>
+                            <td>Propellant, system reliability and mission planning.</td>
+                        </tr>
+                        <tr>
+                            <td>Collision avoidance</td>
+                            <td>Prevent collisions between tracked objects.</td>
+                            <td>Tracking accuracy and timely manoeuvres.</td>
+                        </tr>
+                        <tr>
+                            <td>Active debris removal</td>
+                            <td>Remove selected objects already in orbit.</td>
+                            <td>Rendezvous, capture, cost and safe disposal.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>4.6 Published mitigation-compliance figures</h3>
+
+            <p>
+                ESA's 2025 report gives two compliance figures for rocket
+                bodies in low Earth orbit. The chart below compares those
+                reported percentages. It does not imply that all objects
+                meet either standard.
+            </p>
+
+            <div id="mitigationChart"
+                 class="chart-container"
+                 role="img"
+                 aria-label="ESA reported rocket-body compliance with re-entry time standards">
+                Loading chart...
+            </div>
+
+            <div class="data-note">
+                <strong>Source and scope:</strong>
+                ESA Space Environment Report 2025. The approximately 90%
+                figure relates to the earlier 25-year re-entry standard;
+                the approximately 80% figure relates to the newer
+                five-year standard. They are reported compliance
+                percentages, not a forecast.
+                <br>
+                Source:
+                <a href="https://www.esa.int/Space_Safety/Space_Debris/ESA_Space_Environment_Report_2025"
+                   target="_blank" rel="noopener noreferrer">
+                    ESA Space Environment Report 2025
+                </a>
+            </div>
+        </section>
+
+        <!-- =========================
+             DATA AND ANALYSIS
+        ========================== -->
+
+        <section id="data-analysis">
+            <h2>5. Data and Analysis</h2>
+
+            <p>
+                The data presented in this article show why space debris
+                requires several complementary responses. ESA's estimates
+                illustrate that the number of smaller objects is much
+                greater than the number of large objects. NASA's speed
+                information explains why even small fragments can pose a
+                serious threat. ESA's mitigation-compliance figures
+                indicate that disposal practices are improving, but
+                compliance is not universal.
+            </p>
+
+            <p>
+                The figures should be interpreted according to their
+                definitions. An estimated population is not the same as
+                a count of objects that can be tracked individually.
+                Similarly, a compliance percentage for rocket bodies
+                should not be treated as a percentage for every satellite
+                or piece of debris. Using the correct scope is essential
+                when drawing engineering conclusions from published data.
+            </p>
+
+            <p>
+                Taken together, the sources support a combination of
+                prevention, better end-of-life disposal, tracking and
+                collision avoidance, and the development of active
+                removal methods. No single measure can remove all risk.
+                Long-term progress depends on the reliability of
+                spacecraft design, the decisions made by operators and
+                cooperation between organisations using the same
+                orbital environment.
+            </p>
+        </section>
+
+        <!-- =========================
+             FUTURE
+        ========================== -->
+
+        <section id="future">
+            <h2>6. What Needs to Happen Next?</h2>
+
+            <p>
+                Future spacecraft should be designed with disposal and
+                debris prevention built into the mission from the
+                beginning. This includes considering how a spacecraft
+                will be de-orbited, how its stored energy will be removed,
+                and how it will respond to potential collisions.
+            </p>
+
+            <p>
+                Better coordination between satellite operators can also
+                improve the management of close approaches. Reliable
+                tracking data, consistent reporting and clear
+                responsibilities help operators make decisions before
+                a collision becomes unavoidable.
+            </p>
+
+            <p>
+                Finally, active debris removal and servicing technologies
+                require further engineering development and practical
+                demonstration. Internationally consistent standards are
+                also important because debris generated by one mission
+                can affect many other operators. The objective is not
+                simply to launch spacecraft safely, but to ensure that
+                useful orbits remain accessible over the long term.
+            </p>
+        </section>
+
+        <!-- =========================
+             CONCLUSION
+        ========================== -->
+
+        <section id="conclusion">
+            <h2>7. Conclusion</h2>
+
+            <p>
+                Space debris is a significant engineering challenge
+                because large numbers of human-made objects remain in
+                orbit and even small fragments can cause serious damage
+                at high relative speeds. ESA's debris estimates,
+                NASA's information on impact velocities and ESA's
+                mitigation-compliance figures demonstrate the need for
+                a coordinated approach.
+            </p>
+
+            <p>
+                Preventing new debris, disposing of inactive spacecraft,
+                avoiding collisions and developing active removal
+                technologies can all contribute to safer orbital
+                operations. The long-term sustainability of spaceflight
+                will depend on integrating these measures into the
+                design, operation and end-of-life planning of future
+                missions.
+            </p>
+        </section>
+
+        <!-- =========================
+             REFERENCES
+          
+        ========================== -->
+
+        <section id="references">
+            <h2>8. References</h2>
+
+            <ol class="source-list">
+                <li>
+                    European Space Agency (ESA) (2026).
+                    <i>ESA Space Environment Report 2026.</i>
+                    Available at:
+                    <a href="https://www.esa.int/Space_Safety/Space_Debris/ESA_Space_Environment_Report_2026"
+                       target="_blank" rel="noopener noreferrer">
+                        https://www.esa.int/Space_Safety/Space_Debris/ESA_Space_Environment_Report_2026
+                    </a>
+                    (Accessed: 27 October 2026).
+                </li>
+
+                <li>
+                    European Space Agency (ESA) (2026).
+                    <i>Space Environment Statistics.</i>
+                    Available at:
+                    <a href="https://sdup.esoc.esa.int/discosweb/statistics/"
+                       target="_blank" rel="noopener noreferrer">
+                        https://sdup.esoc.esa.int/discosweb/statistics/
+                    </a>
+                    (Accessed: 27 October 2026).
+                </li>
+
+                <li>
+                    European Space Agency (ESA) (2025).
+                    <i>ESA Space Environment Report 2025.</i>
+                    Available at:
+                    <a href="https://www.esa.int/Space_Safety/Space_Debris/ESA_Space_Environment_Report_2025"
+                       target="_blank" rel="noopener noreferrer">
+                        https://www.esa.int/Space_Safety/Space_Debris/ESA_Space_Environment_Report_2025
+                    </a>
+                    (Accessed: 27 October 2026).
+                </li>
+
+                <li>
+                    NASA Orbital Debris Program Office (n.d.).
+                    <i>Orbital Debris Frequently Asked Questions.</i>
+                    Available at:
+                    <a href="https://orbitaldebris.jsc.nasa.gov/faq/"
+                       target="_blank" rel="noopener noreferrer">
+                        https://orbitaldebris.jsc.nasa.gov/faq/
+                    </a>
+                    (Accessed: 27 October 2026).
+                </li>
+
+                <li>
+                    Kessler, D.J. and Cour-Palais, B.G. (1978).
+                    ‘Collision frequency of artificial satellites:
+                    The creation of a debris belt’.
+                    <i>Journal of Geophysical Research: Space Physics</i>,
+                    83(A6), pp. 2637–2646.
+                    Available at:
+                    <a href="https://doi.org/10.1029/JA083iA06p02637"
+                       target="_blank" rel="noopener noreferrer">
+                        https://doi.org/10.1029/JA083iA06p02637
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <!-- =========================
+             H3: AUTOMATIC WORD COUNT
+        ========================== -->
+
+        <div class="word-count-box">
+            Word count (Introduction and Analysis and Discussion):
+            <span id="wordCount">Calculating...</span>
+        </div>
+
+        <!-- =========================
+             H3: GITHUB LAST MODIFIED TIME
+        ========================== -->
+
+        <section class="timestamp-box" id="github-timestamp">
+            <h2 style="margin-top: 0; border-bottom: none;">
+                GitHub Last Modified Time
+            </h2>
+
+            <p>
+                The timestamp below is retrieved from the latest commit
+                in the configured GitHub repository. Use the button to
+                request the timestamp again.
+            </p>
+
+            <p>
+                <strong>Last modified:</strong>
+                <span id="lastModified">Loading timestamp...</span>
+            </p>
+
+            <button type="button" id="verifyTimestamp">
+                Verify Last Modified Time
+            </button>
+
+            <p id="timestamp-status" aria-live="polite"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        ENG0018 Computer Laboratory 2026/27
+        <br>
+        University of Surrey
+    </footer>
+
+    <!-- =========================
+         H3: JAVASCRIPT FEATURES
+    ========================== -->
+
+    <script>
+        /* ---------------------------------
+           GOOGLE CHARTS INITIALISATION
+        ---------------------------------- */
+
+        google.charts.load('current', {
+            packages: ['corechart']
+        });
+
+        google.charts.setOnLoadCallback(drawAllCharts);
+
+        function drawAllCharts() {
+            drawDebrisSizeChart();
+            drawImpactSpeedChart();
+            drawMitigationChart();
+        }
+
+        /* Chart 1:
+           ESA estimated population by size category.
+           Values use ESA Space Environment Statistics,
+           updated October 2026.
+        */
+
+        function drawDebrisSizeChart() {
+            const data = google.visualization.arrayToDataTable([
+                ['Size category', 'Estimated objects'],
+                ['Greater than 10 cm', 68450],
+                ['1 cm to 10 cm', 1500000],
+                ['1 mm to 1 cm', 230000000]
+            ]);
+
+            const options = {
+                title: 'Estimated Space-Object Population by Size',
+                legend: { position: 'none' },
+                height: 360,
+                chartArea: {
+                    left: 100,
+                    top: 65,
+                    width: '72%',
+                    height: '65%'
+                },
+                hAxis: {
+                    title: 'Estimated number of objects',
+                    logScale: true,
+                    minValue: 10000
+                },
+                vAxis: {
+                    title: 'Size category'
+                },
+                colors: ['#1769aa'],
+                tooltip: {
+                    textStyle: { fontSize: 12 }
+                }
+            };
+
+            const chart = new google.visualization.BarChart(
+                document.getElementById('debrisSizeChart')
+            );
+
+            chart.draw(data, options);
+        }
+
+        /* Chart 2:
+           NASA's stated orbital and impact speed reference values.
+           These are reference values, not a time series.
+        */
+
+        function drawImpactSpeedChart() {
+            const data = google.visualization.arrayToDataTable([
+                ['Speed reference', 'Speed (km/s)'],
+                ['Lower orbital speed', 7],
+                ['Upper orbital speed', 8],
+                ['Average impact speed', 10],
+                ['Possible impact speed', 15]
+            ]);
+
+            const options = {
+                title: 'Orbital Debris Speed Reference Values',
+                legend: { position: 'none' },
+                height: 360,
+                chartArea: {
+                    left: 65,
+                    top: 65,
+                    width: '78%',
+                    height: '65%'
+                },
+                hAxis: {
+                    title: 'Reference category',
+                    slantedText: true,
+                    slantedTextAngle: 20
+                },
+                vAxis: {
+                    title: 'Speed (km/s)',
+                    minValue: 0
+                },
+                colors: ['#c45a28'],
+                annotations: {
+                    alwaysOutside: true
+                }
+            };
+
+            const chart = new google.visualization.ColumnChart(
+                document.getElementById('impactSpeedChart')
+            );
+
+            chart.draw(data, options);
+        }
+
+        /* Chart 3:
+           ESA 2025 reported compliance figures for rocket bodies
+           in low Earth orbit, against two different re-entry standards.
+        */
+
+        function drawMitigationChart() {
+            const data = google.visualization.arrayToDataTable([
+                ['Re-entry standard', 'Reported compliance (%)',
+                    { role: 'style' }],
+                ['25-year standard', 90, '#2e7d32'],
+                ['5-year standard', 80, '#1769aa']
+            ]);
+
+            const options = {
+                title: 'Rocket-Body Compliance with Re-entry Standards',
+                legend: { position: 'none' },
+                height: 360,
+                chartArea: {
+                    left: 75,
+                    top: 65,
+                    width: '75%',
+                    height: '65%'
+                },
+                hAxis: {
+                    title: 'Re-entry standard'
+                },
+                vAxis: {
+                    title: 'Reported compliance (%)',
+                    minValue: 0,
+                    maxValue: 100,
+                    ticks: [0, 20, 40, 60, 80, 100]
+                },
+                annotations: {
+                    alwaysOutside: true
+                }
+            };
+
+            const chart = new google.visualization.ColumnChart(
+                document.getElementById('mitigationChart')
+            );
+
+            chart.draw(data, options);
+        }
+
+        /* Redraw charts when the browser window changes size. */
+
+        window.addEventListener('resize', function () {
+            if (typeof google !== 'undefined' &&
+                google.visualization) {
+                drawAllCharts();
+            }
+        });
+
+        /* ---------------------------------
+           H3: AUTOMATIC WORD COUNT
+           Counts only the Introduction and
+           Analysis and Discussion sections.
+        ---------------------------------- */
+
+        function countWordsInSection(elementId) {
+            const element = document.getElementById(elementId);
+
+            if (!element) {
+                return 0;
+            }
+
+            const text = element.innerText
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            if (text.length === 0) {
+                return 0;
+            }
+
+            return text.split(' ').length;
+        }
+
+        function updateWordCount() {
+            const introductionWords =
+                countWordsInSection('Introduction_InText');
+
+            const analysisWords =
+                countWordsInSection('Analysis_InText');
+
+            const totalWords = introductionWords + analysisWords;
+
+            document.getElementById('wordCount').textContent =
+                totalWords.toLocaleString('en-GB');
+        }
+
+        document.addEventListener('DOMContentLoaded', updateWordCount);
+        const githubUsername = 'FEPSFY7006838';
+        const githubRepository = 'FY7006838';
+
+        async function getLastUpdatedTime() {
+            const timestampElement =
+                document.getElementById('lastModified');
+
+            const statusElement =
+                document.getElementById('timestamp-status');
+
+            timestampElement.textContent = 'Checking GitHub...';
+            statusElement.textContent = '';
+
+            const apiURL =
+                'https://api.github.com/repos/' +
+                encodeURIComponent(githubUsername) + '/' +
+                encodeURIComponent(githubRepository) +
+                '/commits?per_page=1';
+
+            try {
+                const response = await fetch(apiURL, {
+                    headers: {
+                        'Accept': 'application/vnd.github+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(
+                        'GitHub returned HTTP ' + response.status
+                    );
+                }
+
+                const commits = await response.json();
+
+                if (!Array.isArray(commits) || commits.length === 0) {
+                    throw new Error(
+                        'No commits were returned for this repository.'
+                    );
+                }
+
+                const commitDate =
+                    commits[0].commit.committer.date;
+
+                const formattedDate = new Date(commitDate);
+
+                if (Number.isNaN(formattedDate.getTime())) {
+                    throw new Error('The timestamp was not valid.');
+                }
+
+                timestampElement.textContent =
+                    formattedDate.toLocaleString('en-GB', {
+                        dateStyle: 'long',
+                        timeStyle: 'medium',
+                        timeZone: 'UTC'
+                    }) + ' UTC';
+
+                statusElement.textContent =
+                    'Timestamp retrieved successfully from GitHub.';
+
+            } catch (error) {
+                timestampElement.textContent =
+                    'Unable to retrieve timestamp.';
+
+                statusElement.textContent =
+                    error.message +
+                    ' Check the repository name, username, internet ' +
+                    'connection and repository visibility.';
+            }
+        }
+
+        document.getElementById('verifyTimestamp')
+            .addEventListener('click', getLastUpdatedTime);
+
+        /* Fetch the timestamp on initial page load. */
+
+        document.addEventListener('DOMContentLoaded', function () {
+            updateWordCount();
+            getLastUpdatedTime();
+        });
+    </script>
+
+</body>
+</html>
